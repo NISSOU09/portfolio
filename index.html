@@ -3,13 +3,324 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Anis Boukhedimi | Junior Developer Portfolio</title>
+  <meta name="description" content="Anis Boukhedimi - Junior Developer Portfolio. Discover my projects, technologies I use, and how to contact me." />
+  <meta name="keywords" content="Anis Boukhedimi, junior developer, web developer, portfolio, JavaScript, C#, Python, Blazor, USTHB" />
+  <meta name="author" content="Anis Boukhedimi" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    nav {
+      background: #333;
+      text-align: center;
+      padding: 15px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background-color: #555;
+      color: #fff;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .project {
+      background: #fff;
+      padding: 25px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 1.3em;
+    }
+
+    .project p {
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    .skills-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+
+    .skills-logos img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .skills-logos img:hover {
+      transform: scale(1.15);
+    }
+
+    .platform-logos {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+
+    .platform-logos img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      transition: all 0.3s ease;
+      filter: grayscale(60%);
+      border-radius: 8px;
+    }
+
+    .platform-logos img:hover {
+      transform: scale(1.2);
+      filter: grayscale(0%);
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      header {
+        padding: 30px 15px;
+      }
+      
+      header img {
+        width: 100px;
+      }
+      
+      header h1 {
+        font-size: 2em;
+      }
+      
+      header p {
+        font-size: 1.1em;
+      }
+      
+      nav {
+        padding: 12px 5px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9em;
+        padding: 6px 10px;
+      }
+      
+      section {
+        padding: 30px 15px;
+      }
+      
+      h2 {
+        font-size: 1.7em;
+        margin-bottom: 25px;
+      }
+      
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .project {
+        padding: 20px;
+      }
+      
+      .skills-logos {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 15px;
+      }
+      
+      .skills-logos img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .platform-logos {
+        gap: 20px;
+      }
+      
+      .platform-logos img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    /* Small Mobile Styles */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      
+      header p {
+        font-size: 1em;
+      }
+      
+      nav a {
+        margin: 0 5px;
+        font-size: 0.85em;
+        padding: 5px 8px;
+      }
+      
+      section {
+        padding: 25px 10px;
+      }
+      
+      h2 {
+        font-size: 1.5em;
+      }
+      
+      .project {
+        padding: 15px;
+      }
+      
+      .skills-logos {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 12px;
+      }
+      
+      .skills-logos img {
+        width: 45px;
+        height: 45px;
+      }
+      
+      .platform-logos {
+        gap: 15px;
+      }
+      
+      .platform-logos img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    /* Tablet Styles */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .skills-logos {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      }
+    }
+
+    /* Large Screen Styles */
+    @media (min-width: 1200px) {
+      .projects {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+  <!-- AOS Animate On Scroll -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <img src="photo_2025-07-30_14-26-52.jpg" alt="Profile Photo" style="width:120px; border-radius:50%; margin-bottom:0px;">
+    <img src="photo_2025-07-30_14-26-52.jpg" alt="Profile Photo of Anis Boukhedimi">
     <h1>ANIS BOUKHEDIMI</h1>
     <p>Junior Developer</p>
   </header>
@@ -18,79 +329,113 @@
     <a href="#about">About</a>
     <a href="#skills">Technologies</a>
     <a href="#projects">Projects</a>
+    <a href="#learning">Learning</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>Hello! I'm a passionate developer who enjoys building web applications, learning new technologies, and solving problems.
-        <br>
-        freshly graduated from USTHB systeme informatique inteligent
+        <br><br>
+        Freshly graduated from USTHB with a degree in Intelligent Information Systems.
     </p>
   </section>
 
-  <section id="skills">
-    <h2>Languages & Technologies</h2>
+  <section id="learning" data-aos="fade-up">
+    <h2>Learning Platforms</h2>
     <div class="skills-logos">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" title="C">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" title="C#">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML5">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS3">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET" title=".NET">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Blazor.png" alt="Blazor" title="Blazor" style="background:white; border-radius:6px;">
+      <a href="https://learn.microsoft.com/en-us/users/your-username/" target="_blank" rel="noopener">
+        <img src="https://th.bing.com/th/id/OIP.U6C2AXUjEbKQy7xeu_CxvQHaHa?w=156&h=180&c=7&r=0&o=5&pid=1.7" alt="Microsoft Learn" title="Microsoft Learn">
+      </a>
+      <a href="https://www.theodinproject.com/users/your-username" target="_blank" rel="noopener">
+        <img src="https://th.bing.com/th/id/OIP.GXph7JF4XNXmDWCYdSnI2QAAAA?w=181&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="The Odin Project" title="The Odin Project">
+      </a>
+      <a href="https://www.codingame.com/profile/your-username" target="_blank" rel="noopener">
+        <img src="data:image/webp;base64,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" alt="CodinGame" title="CodinGame">
+      </a>
     </div>
   </section>
-  
 
-  <section id="projects">
-    <h2>Stages</h2>
+  <section id="skills" data-aos="fade-up">
+    <h2>Languages & Technologies</h2>
+    <div class="skills-logos">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Programming Language" title="C">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Programming Language" title="C++">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# Programming Language" title="C#">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Microsoft SQL Server" title="SQL Server">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle Database" title="Oracle Database">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Programming Language" title="Python">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Programming Language" title="JavaScript">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Programming Language" title="Java">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Framework" title=".NET">
+      <img src="https://th.bing.com/th/id/OIP.lm2aRjnpa9u8VVTvfGxofwHaHa?w=170&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Blazor Framework" title="Blazor" style="background:white; border-radius:6px;">
+    </div>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2>Internships</h2>
     <div class="projects">
         <div class="project">
-            <h3>stage AGB PFE</h3>
-            <p>Stage de fin d'études (licence) : Implémentation d'une base de connaissances interne à AGB pour gérer les incidents informatiques de l'entreprise.</p>
+            <h3>AGB Graduation Internship</h3>
+            <p>Final internship for bachelor's degree: Implementation of an internal knowledge base at AGB to manage company IT incidents.</p>
         </div>
         <div class="project">
-            <h3>stage AGB API</h3>
-            <p>Stage de courte durée : Création et gestion d'APIs.</p>
+            <h3>AGB API Internship</h3>
+            <p>Short-term internship: Creation and management of APIs for business applications.</p>
         </div>
     </div>
+    
     <h2>Projects</h2>
-    <div class="projects">
-        <a href="https://nissou09.github.io/Project-Etch-a-Sketch/" target="_blank">
+    <div class="projects" data-aos="fade-up">
+        <a href="https://nissou09.github.io/Project-Etch-a-Sketch/" target="_blank" rel="noopener">
             <div class="project">
                 <h3>Etch & Sketch</h3>
-                <p>A mini project from The Odin Poject to practice pure css effects</p>
+                <p>A mini project from The Odin Project to practice pure CSS effects and DOM manipulation.</p>
             </div>
         </a>
-      <a href="https://nissou09.github.io/Project-Library/" target="_blank">
+      <a href="https://nissou09.github.io/Project-Library/" target="_blank" rel="noopener">
           <div class="project">
-              <h3>labrary page</h3>
-              <p>A mini project from The Odin Poject to practice using HTML, CSS, and JavaScript</p>
+              <h3>Library Page</h3>
+              <p>A mini project from The Odin Project to practice using HTML, CSS, and JavaScript for book management.</p>
             </div>
         </a>
-      <a href="https://nissou09.github.io/Project-Tic-Tac-Toe/" target="_blank">
+      <a href="https://nissou09.github.io/Project-Tic-Tac-Toe/" target="_blank" rel="noopener">
           <div class="project">
             <h3>Tic-Tac-Toe</h3>
-            <p>a mini project from The Odin Poject consist of creating Tic-Tac-Toe game (XO) to practice JavaScript logic and DOM manipulation.</p>
+            <p>A mini project from The Odin Project consisting of creating a Tic-Tac-Toe game to practice JavaScript logic and DOM manipulation.</p>
           </div>
       </a>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your@email.com">superanis305@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/anis</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">https://github.com/NISSOU09</a></p>
-  </section>
+  <section id="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <div class="platform-logos">
+    <a href="mailto:superanis305@gmail.com" aria-label="Send email">
+        <img src="data:image/webp;base64,UklGRpoFAABXRUJQVlA4II4FAABwJgCdASrTANMAPp1Oo0ylpK8iJDPY8eATiWNu4Wuw/pt9kx23yH5JdEjxL4L5q88HpZ8M6APRT5gH6Gf6j+c9Y3zE+bd/pPWl/o/UJ/vnUpejX0o37VegBqlvkR9XbNkxdVY2m/VnTK+vT9ufYw/Z0YQEUlTz0/LGICKSp56fljEBFJU89CB/bnB2JTeefjtRc6pjzwwqxHyytJ4zfaNHOFtyZG139fDIrkdwt+uFjJWPPYqBicKb+Rw/D5p17457z4k4EntlgMyFB8Ioa6EkuIIRnIMlZCgHQGTR5bGPQT/4Q9qnTCNjlyuiL321OBs96HlLPIL5ETeNEFNQ4Y/Ozn6c4nkqZyfSf+0TfridkNrWfEgzuGS5zVmzjX3KzLM8Ml7QN0TopKnnp+WMQEUlTz0/LGICKSp56fcAAP79lgAAAAK+JIWve+fwBVqscvIipzRtLlLDXJ7ywlt69v0/yh51pB94qyCs5T6ggZnLppo/1ARuYXnwGtURBEqtKuEpFMEULJfR/brZZxjW1nGuZdr2r28q6vvSUSC4qxupC7CCQ9Nnqs0Yq0NT8gwasz37DKMCzqx8bBHTtMvLKqnR8mkWRi/fb2nDnLRxwTH2Ig8atjVON9Tsl6uEy/jw1e3s2T5Q9p3Uafu9IcLjsRPFpTKGjMth8+SX8yR2T7sCrnDQ3mkqN9IRqrv5oMqujwsq0SupiNRPQoLfHq40N9Fi3zwRpPUwTaPh2n9g6LLZrTCbGR3TVtIsdxwOrBaN7zVqn196FoDQEz+HT7UbNwnCCRKyQMeGpVtzPDvEYxSC8ib4e1PtR36oIFigs8lyUDh6Tq/ndtgNE86q8QuNU06NbtFCPReTTWYIE0A+iZJHXe+fFWrspRciI1fb2Qn9jTuiI9X68GC9YgS20rLtHaRoM3XhCQSNwkdQj7ohtxc24gIyruztJQozjkBuAVygRIs6KNE42W/chQqTuWZszhlAz5wfXprHYd7VzaojixIaLj6vCSh+pUL/+RxHmzBoa9Cyf+DBRu0qYsnd1SO+Aed+NAINLUwT6MTAoDEf9cwKGMJVtO69344O6XZJ+dqhUsEtTfXz/4NoasRPTebmM/WtBf9+XE8D9Qn9pIjVOtTaIBI85IB7VDgIwCKKehctI8HkGsAikrTQzbYuQPPcSX9B9fcR4voV5G4dOFjfLDfPVJRTGGIsh6/HkOx928YOO7Vm+zgAG6yVwLCl7ymS9LToA6VvpA+XHg7aJn1tcrtlbJkEmjC687z3Pq/hhpuIB1lsi+O7M7un4uWxHek/mfyJ8EoE8vcfBNgN/FoLqw75puZfEP+jCOkfGq6YLoILPBuWEmIYESy0kUXeB6gew8Z3yjoj+WeisLuRtAfDDn4MdXlKFdvYSJDE6DAEm4aaPxd/JOdd4vx4WVk6FFwaW/zn/3r23iXnO4yAFLdIS7uoO9Cb6zyUYom+tZapIQl8qCDtTnZb81/M4S1WxGJqUcvS7Y2vWaQVeu59+1dssUeeDUZhu0mgPpKxWXRzhX0Wdvtb9qlsatVb6gLFiJjEAJOc8snak8zkviXX+SBHDgJJzPPdIDrz/aHKlPjXeedjT+0fA9+Kq3y9mk0ugXDqg4UPLJ1Sc7/XZdFRA5+GQJ9cZqJflLQXUWjbH+fEaUmAaveGFS0YVhJP6OnK5B8jhCa6elMmrMPpS3cW70dzrUyrXVMz2e6sM8mKkRe+FnJCr9ApV6IMxZ5QEkwNbu5QocvZTUHpStCfMRMDAS8XjCPkRznv4a0lPI+DGMdAJEAyNyuKccRY8PGO/mIsT1Dk8tby8qXYzyOuAeetVmNHAgJRbO02OM0oNpoLArKDvAp/fkrzyTts7Y5ANfYprqIahhInF1zhrUAzBAAAAAAAAAA=" alt="Email" title="Email">
+    </a>
+    <a href="https://www.linkedin.com/in/anis-boukhedimi" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" title="LinkedIn">
+    </a>
+    <a href="https://github.com/NISSOU09" target="_blank" rel="noopener" aria-label="GitHub Profile">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" title="GitHub">
+    </a>
+  </div>
+</section>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Anis Boukhedimi. All rights reserved.</p>
   </footer>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    offset: 100,
+    once: true
+  });
+</script>
 
 </body>
 </html>

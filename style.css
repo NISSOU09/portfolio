@@ -1,98 +1,305 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header img {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+  margin: 0;
+}
+
+nav {
+  background: #333;
+  text-align: center;
+  padding: 15px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.project h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.3em;
+}
+
+.project p {
+  color: #666;
+  margin-bottom: 0;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+.skills-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.skills-logos img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.skills-logos img:hover {
+  transform: scale(1.15);
+}
+
+.platform-logos {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+
+.platform-logos img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(60%);
+  border-radius: 8px;
+}
+
+.platform-logos img:hover {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 15px;
   }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background: #222;
-      color: #fff;
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    nav {
-      background: #333;
-      text-align: center;
-      padding: 10px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a{
-        all: unset;
-        cursor: pointer;
-    }
-
-    a:hover{
-        color: red;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .project {
-      background: #fff;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-
-    .skills-logos {
-    display: flex;
-    flex-wrap: wrap;
+  
+  header img {
+    width: 100px;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  header p {
+    font-size: 1.1em;
+  }
+  
+  nav {
+    padding: 12px 5px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  nav a {
+    margin: 0 8px;
+    font-size: 0.9em;
+    padding: 6px 10px;
+  }
+  
+  section {
+    padding: 30px 15px;
+  }
+  
+  h2 {
+    font-size: 1.7em;
+    margin-bottom: 25px;
+  }
+  
+  .projects {
+    grid-template-columns: 1fr;
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
   }
-
+  
+  .project {
+    padding: 20px;
+  }
+  
+  .skills-logos {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 15px;
+  }
+  
   .skills-logos img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    width: 50px;
+    height: 50px;
   }
+  
+  .platform-logos {
+    gap: 20px;
+  }
+  
+  .platform-logos img {
+    width: 40px;
+    height: 40px;
+  }
+}
 
-  .skills-logos img:hover {
-    transform: scale(1.2);
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
   }
+  
+  header p {
+    font-size: 1em;
+  }
+  
+  nav a {
+    margin: 0 5px;
+    font-size: 0.85em;
+    padding: 5px 8px;
+  }
+  
+  section {
+    padding: 25px 10px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  .project {
+    padding: 15px;
+  }
+  
+  .skills-logos {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 12px;
+  }
+  
+  .skills-logos img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .platform-logos {
+    gap: 15px;
+  }
+  
+  .platform-logos img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-logos {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
+}
+
+/* Large Screen Styles */
+@media (min-width: 1200px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
